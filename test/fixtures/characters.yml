@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  page_id: 1
+  name: MyString
+  urlslug: MyString
+  identity_status: MyString
+  alignment: MyString
+  eye_color: MyString
+  hair_color: MyString
+  sex: MyString
+  gsm: MyString
+  alive_status: MyString
+  appearances: 1
+  first_appearance: MyString
+  year: 1
+
+two:
+  page_id: 1
+  name: MyString
+  urlslug: MyString
+  identity_status: MyString
+  alignment: MyString
+  eye_color: MyString
+  hair_color: MyString
+  sex: MyString
+  gsm: MyString
+  alive_status: MyString
+  appearances: 1
+  first_appearance: MyString
+  year: 1

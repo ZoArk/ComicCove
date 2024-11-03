@@ -1,0 +1,26 @@
+<h1><%= @character.name %></h1>
+
+<div class="character-details">
+  <p><strong>Identity Status:</strong> <%= @character.identity_status %></p>
+  <p><strong>Alignment:</strong> <%= @character.alignment %></p>
+
+  <p>
+  <strong>Character Link URL:</strong>
+  <%= link_to @character.name,
+      @character.universe == 'DC' ? "https://dc.fandom.com#{@character.urlslug}" : "https://marvel.fandom.com#{@character.urlslug}" %>
+</p>
+
+  <p><strong>Eye Color:</strong> <%= @character.eye_color %></p>
+  <p><strong>Hair Color:</strong> <%= @character.hair_color %></p>
+  <p><strong>Sex:</strong> <%= @character.sex %></p>
+  <p><strong>GSM:</strong> <%= @character.gsm %></p>
+  <p><strong>Alive Status:</strong> <%= @character.alive_status %></p>
+  <p><strong>Appearances:</strong> <%= @character.appearances %></p>
+  <p><strong>First Appearance:</strong> <%= @character.first_appearance %></p>
+  <p><strong>Year:</strong> <%= @character.year %></p>
+</div>
+
+
+<%= link_to 'Back to Characters', characters_path, class: 'back-link' %>
+
+

@@ -1,0 +1,50 @@
+<h1>Comic Cove</h1>
+
+<%= form_with url: characters_path, method: :get, local: true do %>
+  <div>
+    <%= label_tag :query, "Search by Name" %>
+    <%= text_field_tag :query, params[:query] %>
+  </div>
+
+  <div>
+    <%= label_tag :alignment, "Alignment" %>
+    <%= select_tag :alignment, options_for_select(['Good Characters', 'Bad Characters', 'Neutral Characters'], selected: params[:alignment]), include_blank: true %>
+  </div>
+
+  <div>
+    <%= label_tag :alive_status, "Alive Status" %>
+    <%= select_tag :alive_status, options_for_select(['Living Characters', 'Deceased Characters'], selected: params[:alive_status]), include_blank: true %>
+  </div>
+
+  <div>
+    <%= label_tag :min_appearances, "Minimum Appearances" %>
+    <%= number_field_tag :min_appearances, params[:min_appearances] %>
+  </div>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<%= paginate @characters %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Alignment</th>
+      <th>Appearances</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.name %></td>
+        <td><%= character.alignment %></td>
+        <td><%= character.appearances %></td>
+        <td><%= link_to 'View', character_path(character) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @characters %>
+
+
+
